@@ -6,6 +6,7 @@ public class SpeedBoost : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other){
         if(other.GetComponent<Creature>() != null){
+            other.GetComponent<Creature>().ModifySpeed();
             Destroy(this.gameObject);
         }
     }

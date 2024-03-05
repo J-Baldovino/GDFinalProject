@@ -11,6 +11,6 @@ public class SpeedTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //speedText.text = playerCreature.speed.toString();
+        speedText.text = "This is the current speed:\n" + playerCreature.speed;
     }
 }

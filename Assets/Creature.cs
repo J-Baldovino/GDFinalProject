@@ -5,7 +5,8 @@ using UnityEngine;
 public class Creature : MonoBehaviour
 {
 
-    [SerializeField] float speed = 5.0f;
+    //NOTE: It may be a could idea to prevent the variable from being public
+    [SerializeField] public float speed = 5.0f;
 
     [Header("Tracked Data")]
     [SerializeField] Vector3 homePosition = Vector3.zero;
@@ -31,5 +32,9 @@ public class Creature : MonoBehaviour
 
     public void MoveCreatureRb(Vector3 direction){
         rb.velocity = (direction * speed);
+    }
+
+    public void ModifySpeed(){
+        speed += Random.Range(5,16);
     }
 }
