@@ -34,7 +34,8 @@ public class Creature : MonoBehaviour
         rb.velocity = (direction * speed);
     }
 
-    public void ModifySpeed(){
-        speed += Random.Range(5,16);
+    public void CollectSpeedItem(){
+        speed += Random.Range(5,8);
+        GetComponent<AudioSource>().Play();
     }
 }
