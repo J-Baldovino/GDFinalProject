@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FakeWall
   layers:
   - Default
   - TransparentFX
@@ -12,8 +13,8 @@ TagManager:
   - Water
   - UI
   - Environment
-  - 
-  - 
+  - Player
+  - Interactable
   - 
   - 
   - 
@@ -38,11 +39,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: Background
     uniqueID: 764871809
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: Environment
+    uniqueID: 1455825367
+    locked: 0
+  - name: Interactables
+    uniqueID: 3319592343
+    locked: 0
+  - name: Player
+    uniqueID: 3091412067
     locked: 0
   - name: UI
     uniqueID: 2813313771
