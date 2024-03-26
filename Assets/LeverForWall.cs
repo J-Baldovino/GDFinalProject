@@ -4,26 +4,19 @@ using UnityEngine;
 
 public class LeverForWall : InteractableObject
 {
-
     [SerializeField] GameObject fakeWall;
     private bool fakeWallActive = true;
+    SpriteRenderer leverSprite;
 
-    // // Start is called before the first frame update
-    // void Start()
-    // {
-
-    // }
-
-    // // Update is called once per frame
-    // void Update()
-    // {
-
-    // }
+    void Awake(){
+        leverSprite = GetComponent<SpriteRenderer>();
+    }
 
     protected override void OnInteract()
     {
         if(fakeWallActive){
             base.OnInteract();
+            leverSprite.flipX = false; //Flips the lever sprite on the X-axis
             fakeWallActive = false;
             fakeWall.SetActive(!fakeWall.activeSelf);
         }

@@ -19,7 +19,8 @@ public class PlayerEscape : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other){
         if(other.GetComponent<Creature>() != null){
-            GetComponent<AudioSource>().Play();
+            //Will implement a coroutine to allow the sound to play before switching scenes
+            //GetComponent<AudioSource>().Play();
             SceneManager.LoadScene("YouEscaped");
         }
     }
