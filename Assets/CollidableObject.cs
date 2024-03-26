@@ -20,6 +20,8 @@ public class CollidableObject : MonoBehaviour
         }
     }
 
+    //Basic function for the generic class
+    //Implemented for testing purposes
     protected virtual void OnCollided(GameObject collidedObject){
         Debug.Log("Collided with " + collidedObject.name);
     }
