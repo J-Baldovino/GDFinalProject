@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LeverForWall : InteractableObject
 {
@@ -8,8 +9,17 @@ public class LeverForWall : InteractableObject
     private bool fakeWallActive = true;
     SpriteRenderer leverSprite;
 
+    [SerializeField] LeverCounter leverCounter;
+
+    int numRequiredLevers;
+    // int sceneID;
+
     void Awake(){
         leverSprite = GetComponent<SpriteRenderer>();
+        // int sceneID = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("This is the sceneID: " + leverCounter.sceneID);
+        Debug.Log("This is the required number of levers: " + leverCounter.numRequiredLevers);
+
     }
 
     protected override void OnInteract()
