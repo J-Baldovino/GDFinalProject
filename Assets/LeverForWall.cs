@@ -11,15 +11,8 @@ public class LeverForWall : InteractableObject
 
     [SerializeField] LeverCounter leverCounter;
 
-    int numRequiredLevers;
-    // int sceneID;
-
     void Awake(){
         leverSprite = GetComponent<SpriteRenderer>();
-        // int sceneID = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log("This is the sceneID: " + leverCounter.sceneID);
-        Debug.Log("This is the required number of levers: " + leverCounter.numRequiredLevers);
-
     }
 
     protected override void OnInteract()
@@ -28,7 +21,13 @@ public class LeverForWall : InteractableObject
             base.OnInteract();
             leverSprite.flipX = false; //Flips the lever sprite on the X-axis
             fakeWallActive = false;
-            fakeWall.SetActive(!fakeWall.activeSelf);
+            GetComponent<AudioSource>().Play();
+            LeverCounterSingleton.singleton.leversActivated++;
+
+            //Deactivate the fake wall if the number of required levers is met
+            if(leverCounter.numRequiredLevers == LeverCounterSingleton.singleton.leversActivated){
+                 fakeWall.SetActive(!fakeWall.activeSelf);
+            }
         }
     }
 

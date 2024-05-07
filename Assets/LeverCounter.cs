@@ -13,6 +13,7 @@ public class LeverCounter : MonoBehaviour
     public int numRequiredLevers;
     // [SerializeField] Creature playerCreature;
 
+
     void Awake(){
         sceneID = SceneManager.GetActiveScene().buildIndex;
         SetRequiredLevers();
@@ -29,6 +30,12 @@ public class LeverCounter : MonoBehaviour
         switch(sceneID){
             case 1:
                 numRequiredLevers = 1;
+                break;
+            case 4:
+                numRequiredLevers = 2;
+                break;
+            case 5:
+                numRequiredLevers = 3;
                 break;
         }
     }

@@ -31,6 +31,11 @@ public class DifficultyMenu : MonoBehaviour
         SceneManager.LoadScene(4);
     }
 
+    public void PlayChallenge(){
+        //Use this var once you complete the first map and reverse it
+        SceneManager.LoadScene(5);
+    }
+
     //Create two more functions for the different map levels
 
     public void OpenOptions(){
