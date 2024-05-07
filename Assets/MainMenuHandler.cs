@@ -17,12 +17,6 @@ public class MainMenuHandler : MonoBehaviour
         
     }
 
-    public void Play(){
-        //Use this var once you complete the first map and reverse it
-        // int mazeVariant = Random.Range(1,3);
-        SceneManager.LoadScene(1);
-    }
-
     public void ReturnToMainMenu(){
         SceneManager.LoadScene("MainMenu");
     }
